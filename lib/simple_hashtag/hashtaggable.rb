@@ -16,7 +16,7 @@ module SimpleHashtag
 
       def update_hashtags
         # return when the selected hash attributes is not updated.
-        return unless self.changed.map(&:to_sym).include?(self.class.hashtaggable_attribute_name)
+        return unless self.changed.include?(self.class.hashtaggable_attribute_name.to_s) || self.destroyed?
         self.hashtags = parsed_hashtags
       end
 
