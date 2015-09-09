@@ -1,8 +1,5 @@
 module SimpleHashtag
   class Hashtag < ActiveRecord::Base
-    
-    attr_accessible :name
-    
     self.table_name = "simple_hashtag_hashtags"
 
     has_many :hashtaggings
